@@ -1,10 +1,10 @@
 import { h, render, Component } from 'preact';
-class XFrame extends HTMLElement {
+class AsyncPreactLoader extends HTMLElement {
     static get observedAttributes() {
         return ['src'];
     }
 
-    // x-frame ready state
+    // async-preact-loader ready state
     // 0: instance node initiated
     // 1: instance node connected to document
     // 2: component loaded
@@ -83,7 +83,7 @@ class XFrame extends HTMLElement {
 
                 loader.onload = function () {
                     this.shadowRoot.removeChild(loader);
-                    this.#component = window.__X_COMPONENT__(h, Component);
+                    this.#component = window.__PREACT_COMPONENT__(h, Component);
                     this.#readyState = 2;
 
                     if (!this.hasAttribute('defer') || this.#pending) {
@@ -102,4 +102,4 @@ class XFrame extends HTMLElement {
     }
 }
 
-customElements.define('x-frame', XFrame);
+customElements.define('async-preact-loader', AsyncPreactLoader);

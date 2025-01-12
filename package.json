@@ -1,24 +1,27 @@
 {
-  "name": "@zeroice/x-frame",
+  "name": "async-preact-loader",
   "version": "1.0.0",
-  "description": "即时设计D2C组件解析器",
+  "description": "异步preact组件加载器",
   "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
   },
   "repository": {
-    "type":"git",
-    "url":"git+https://github.com/vicksiyi/xframe.git"
+    "type": "git",
+    "url": "git+https://github.com/vicksiyi/async-preact-loader.git"
   },
   "keywords": [
-    "即时设计",
-    "JsDesign",
-    "XFrame"
+    "preact",
+    "loader"
   ],
-  "author": "JsDesigner",
+  "author": "ZeroIce",
   "license": "MIT",
   "devDependencies": {
-    "preact": "^10.10.6"
+    "preact": "^10.10.6",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "webpack": "^5.97.1"
   }
 }

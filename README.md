@@ -29,12 +29,13 @@ npm install
 首先，你需要定义一个 Preact 组件，并将其暴露为全局函数 __PREACT_COMPONENT__。以下是一个简单的示例：
 ```js
 // my-component.js  
-window.__PREACT_COMPONENT__ = (h, Component) => {  
-    return class MyComponent extends Component {  
-        render(props) {  
-            return <div>Hello, {props.name}!</div>;  
-        }  
-    };  
+window.__PREACT_COMPONENT__ = (h, Component) => {
+    class Main extends Component {
+        render() {
+            return h('div', {}, ["Hello World"]);
+        }
+    }
+    return Main;
 };
 ```
 
